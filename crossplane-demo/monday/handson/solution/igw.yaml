@@ -4,7 +4,7 @@ metadata:
   name: my-basic-crossplane-igw
 spec:
   forProvider:
-    region: eu-west-3
+    region: eu-west-2
     vpcIdRef:
       name: my-basic-crossplane-vpc
     tags:

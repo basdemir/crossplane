@@ -15,7 +15,7 @@ spec:
         kind: VPC
         spec:
           forProvider:
-            region: eu-west-3
+            region: eu-west-2
             cidrBlock: 192.168.0.0/16
             enableDnsSupport: true
             enableDnsHostNames: true
@@ -27,7 +27,7 @@ spec:
         kind: InternetGateway
         spec:
           forProvider:
-            region: eu-west-3
+            region: eu-west-2
             vpcIdSelector:
               matchControllerRef: true
       patches:
@@ -38,16 +38,16 @@ spec:
         kind: Subnet
         metadata:
           labels:
-            zone: eu-west-3a
+            zone: eu-west-2a
             access: public
         spec:
           forProvider:
-            region: eu-west-3
+            region: eu-west-2
             mapPublicIPOnLaunch: true
             cidrBlock: 192.168.0.0/18
             vpcIdSelector:
               matchControllerRef: true
-            availabilityZone: eu-west-3a
+            availabilityZone: eu-west-2a
             tags:
               - key: kubernetes.io/role/elb
                 value: "1"
@@ -59,16 +59,16 @@ spec:
         kind: Subnet
         metadata:
           labels:
-            zone: eu-west-3b
+            zone: eu-west-2b
             access: public
         spec:
           forProvider:
-            region: eu-west-3
+            region: eu-west-2
             mapPublicIPOnLaunch: true
             cidrBlock: 192.168.64.0/18
             vpcIdSelector:
               matchControllerRef: true
-            availabilityZone: eu-west-3b
+            availabilityZone: eu-west-2b
             tags:
               - key: kubernetes.io/role/elb
                 value: "1"
@@ -80,15 +80,15 @@ spec:
         kind: Subnet
         metadata:
           labels:
-            zone: eu-west-3a
+            zone: eu-west-2a
             access: private
         spec:
           forProvider:
-            region: eu-west-3
+            region: eu-west-2
             cidrBlock: 192.168.128.0/18
             vpcIdSelector:
               matchControllerRef: true
-            availabilityZone: eu-west-3a
+            availabilityZone: eu-west-2a
             tags:
               - key: kubernetes.io/role/internal-elb
                 value: "1"
@@ -101,15 +101,15 @@ spec:
         kind: Subnet
         metadata:
           labels:
-            zone: eu-west-3b
+            zone: eu-west-2b
             access: private
         spec:
           forProvider:
-            region: eu-west-3
+            region: eu-west-2
             cidrBlock: 192.168.192.0/18
             vpcIdSelector:
               matchControllerRef: true
-            availabilityZone: eu-west-3b
+            availabilityZone: eu-west-2b
             tags:
               - key: kubernetes.io/role/internal-elb
                 value: "1"
@@ -121,7 +121,7 @@ spec:
         kind: RouteTable
         spec:
           forProvider:
-            region: eu-west-3
+            region: eu-west-2
             vpcIdSelector:
               matchControllerRef: true
             routes:
@@ -132,22 +132,22 @@ spec:
               - subnetIdSelector:
                   matchControllerRef: true
                   matchLabels:
-                    zone: eu-west-3a
+                    zone: eu-west-2a
                     access: public
               - subnetIdSelector:
                   matchControllerRef: true
                   matchLabels:
-                    zone: eu-west-3b
+                    zone: eu-west-2b
                     access: public
               - subnetIdSelector:
                   matchControllerRef: true
                   matchLabels:
-                    zone: eu-west-3a
+                    zone: eu-west-2a
                     access: private
               - subnetIdSelector:
                   matchControllerRef: true
                   matchLabels:
-                    zone: eu-west-3b
+                    zone: eu-west-2b
                     access: private
       patches:
         - fromFieldPath: spec.id
@@ -157,7 +157,7 @@ spec:
         kind: SecurityGroup
         spec:
           forProvider:
-            region: eu-west-3
+            region: eu-west-2
             vpcIdSelector:
               matchControllerRef: true
             groupName: platform-ref-aws-cluster

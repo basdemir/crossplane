@@ -5,7 +5,7 @@ metadata:
   name: my-crossplane-eip1
 spec:
   forProvider:
-    region: eu-west-3
+    region: eu-west-2
     tags:
     - key: Name
       value: my-crossplane-eip1
@@ -16,7 +16,7 @@ metadata:
   name: my-crossplane-eip2
 spec:
   forProvider:
-    region: eu-west-3
+    region: eu-west-2
     tags:
     - key: Name
       value: my-crossplane-eip2
@@ -27,10 +27,10 @@ metadata:
   name: my-crossplane-nat1
   labels:
     vpc: my-basic-crossplane-vpc
-    availabilityZone: eu-west-3a
+    availabilityZone: eu-west-2a
 spec:
   forProvider:
-    region: eu-west-3
+    region: eu-west-2
     allocationIdRef:
       name: my-crossplane-eip1
     subnetIdRef:
@@ -45,10 +45,10 @@ metadata:
   name: my-crossplane-nat2
   labels:
     vpc: my-basic-crossplane-vpc
-    availabilityZone: eu-west-3b
+    availabilityZone: eu-west-2b
 spec:
   forProvider:
-    region: eu-west-3
+    region: eu-west-2
     allocationIdRef:
       name: my-crossplane-eip2
     subnetIdRef:

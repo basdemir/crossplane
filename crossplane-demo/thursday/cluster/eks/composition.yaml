@@ -50,7 +50,7 @@ spec:
         kind: Cluster
         spec:
           forProvider:
-            region: eu-west-3
+            region: eu-west-2
             roleArnSelector:
               matchControllerRef: true
               matchLabels:
@@ -136,7 +136,7 @@ spec:
         kind: NodeGroup
         spec:
           forProvider:
-            region: eu-west-3
+            region: eu-west-2
             clusterNameSelector:
               matchControllerRef: true
             nodeRoleSelector:

@@ -8,11 +8,11 @@ metadata:
   labels:
     vpc: my-basic-crossplane-vpc
     publicOrPrivate: 'private'
-    availabilityZone: eu-west-3a
+    availabilityZone: eu-west-2a
 spec:
   forProvider:
-    region: eu-west-3
-    availabilityZone: eu-west-3a
+    region: eu-west-2
+    availabilityZone: eu-west-2a
     vpcIdRef:
       name: my-basic-crossplane-vpc
     cidrBlock: 10.0.2.0/24
@@ -30,11 +30,11 @@ metadata:
   labels:
     vpc: my-basic-crossplane-vpc
     publicOrPrivate: 'private'
-    availabilityZone: eu-west-3b
+    availabilityZone: eu-west-2b
 spec:
   forProvider:
-    region: eu-west-3
-    availabilityZone: eu-west-3b
+    region: eu-west-2
+    availabilityZone: eu-west-2b
     vpcIdRef:
       name: my-basic-crossplane-vpc
     cidrBlock: 10.0.3.0/24

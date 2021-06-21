@@ -60,7 +60,7 @@ spec:
         # natGatewayIdSelector:
         #   matchControllerRef: true
         #   matchLabels: 
-        #     availabilityZone: eu-west-3a
+        #     availabilityZone: eu-west-2a
     vpcIdRef:
       name: {{ include "vpc.fullname" . }}
     tags:
@@ -94,7 +94,7 @@ spec:
         # natGatewayIdSelector:
         #   matchControllerRef: true
         #   matchLabels: 
-        #     availabilityZone: eu-west-3b
+        #     availabilityZone: eu-west-2b
     vpcIdRef:
       name: {{ include "vpc.fullname" . }}
     tags:

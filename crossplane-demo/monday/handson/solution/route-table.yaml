@@ -5,18 +5,18 @@ metadata:
   name: my-public-crossplane-rt
 spec:
   forProvider:
-    region: eu-west-3
+    region: eu-west-2
     associations:
       - subnetIdSelector:
           matchLabels:
             vpc: my-basic-crossplane-vpc
             publicOrPrivate: public
-            availabilityZone: eu-west-3a
+            availabilityZone: eu-west-2a
       - subnetIdSelector:
           matchLabels:
             vpc: my-basic-crossplane-vpc
             publicOrPrivate: public
-            availabilityZone: eu-west-3b
+            availabilityZone: eu-west-2b
     routes:
       - destinationCidrBlock: 0.0.0.0/0
         gatewayIdRef: 
@@ -30,16 +30,16 @@ spec:
 apiVersion: ec2.aws.crossplane.io/v1beta1
 kind: RouteTable
 metadata:
-  name: my-private-crossplane-rt-eu-west-3a
+  name: my-private-crossplane-rt-eu-west-2a
 spec:
   forProvider:
-    region: eu-west-3
+    region: eu-west-2
     associations:
       - subnetIdSelector:
           matchLabels:
             vpc: my-basic-crossplane-vpc
             publicOrPrivate: private
-            availabilityZone: eu-west-3a
+            availabilityZone: eu-west-2a
     routes:
       - destinationCidrBlock: 0.0.0.0/0
         natGatewayIdRef: 
@@ -48,26 +48,26 @@ spec:
         # natGatewayIdSelector:
         #   matchControllerRef: true
         #   matchLabels: 
-        #     availabilityZone: eu-west-3a
+        #     availabilityZone: eu-west-2a
     vpcIdRef:
       name: my-basic-crossplane-vpc
     tags:
     - key: Name
-      value: my-private-crossplane-rt-eu-west-3a
+      value: my-private-crossplane-rt-eu-west-2a
 ---
 apiVersion: ec2.aws.crossplane.io/v1beta1
 kind: RouteTable
 metadata:
-  name: my-private-crossplane-rt-eu-west-3b
+  name: my-private-crossplane-rt-eu-west-2b
 spec:
   forProvider:
-    region: eu-west-3
+    region: eu-west-2
     associations:
       - subnetIdSelector:
           matchLabels:
             vpc: my-basic-crossplane-vpc
             publicOrPrivate: private
-            availabilityZone: eu-west-3b
+            availabilityZone: eu-west-2b
     routes:
       - destinationCidrBlock: 0.0.0.0/0
         natGatewayIdRef: 
@@ -76,9 +76,9 @@ spec:
         # natGatewayIdSelector:
         #   matchControllerRef: true
         #   matchLabels: 
-        #     availabilityZone: eu-west-3a
+        #     availabilityZone: eu-west-2a
     vpcIdRef:
       name: my-basic-crossplane-vpc
     tags:
     - key: Name
-      value: my-private-crossplane-rt-eu-west-3a      
+      value: my-private-crossplane-rt-eu-west-2a      

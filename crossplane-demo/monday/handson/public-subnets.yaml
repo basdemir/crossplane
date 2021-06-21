@@ -6,10 +6,10 @@ metadata:
   labels:
     vpc: my-basic-crossplane-vpc
     publicOrPrivate: 'public'
-    availabilityZone: eu-west-3a
+    availabilityZone: eu-west-2a
 spec:
   forProvider:
-    region: eu-west-3
+    region: eu-west-2
     # Do Stuff here
     tags:
     - key: Name
@@ -22,10 +22,10 @@ metadata:
   labels:
     vpc: my-basic-crossplane-vpc
     publicOrPrivate: 'public'
-    availabilityZone: eu-west-3b
+    availabilityZone: eu-west-2b
 spec:
   forProvider:
-    region: eu-west-3
+    region: eu-west-2
     # Do Stuff here
     tags:
     - key: Name

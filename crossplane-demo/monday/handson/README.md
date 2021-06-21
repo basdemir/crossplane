@@ -4,7 +4,7 @@
 
 See the doc [here](https://doc.crds.dev/github.com/crossplane/provider-aws/ec2.aws.crossplane.io/VPC/v1beta1@v0.18.1) to complete the `basic-vpc.yaml` file.
 
-This VPC must be created in `eu-west-3` region with a CIDR `10.0.0.0/16`.
+This VPC must be created in `eu-west-2` region with a CIDR `10.0.0.0/16`.
 
 ```sh
 kubectl apply -f basic-vpc.yaml
@@ -66,8 +66,8 @@ To do that, you can use the `crossplane.io/external-name` annotation inside a ma
 With the AWS CLI, we will create two **private** Subnets attached to the VPC of the `my-basic-crossplane-vpc`, then import them:
 ```sh
 VPC_ID=$(kubectl -n crossplane-system get vpc my-basic-crossplane-vpc -o jsonpath='{.metadata.annotations.crossplane\.io/external-name}')
-AWS_PROFILE=SET_IT aws ec2 create-subnet --availability-zone eu-west-3a --cidr-block 10.0.2.0/24 --vpc-id "${VPC_ID}" --region eu-west-3
-AWS_PROFILE=SET_IT aws ec2 create-subnet --availability-zone eu-west-3b --cidr-block 10.0.3.0/24 --vpc-id "${VPC_ID}" --region eu-west-3
+AWS_PROFILE=SET_IT aws ec2 create-subnet --availability-zone eu-west-2a --cidr-block 10.0.2.0/24 --vpc-id "${VPC_ID}" --region eu-west-2
+AWS_PROFILE=SET_IT aws ec2 create-subnet --availability-zone eu-west-2b --cidr-block 10.0.3.0/24 --vpc-id "${VPC_ID}" --region eu-west-2
 ```
 
 Note the subnet ids, then edit the `private-subnets.yaml` file to set the `crossplane.io/external-name` annotation:
@@ -84,8 +84,8 @@ metadata:
     private: 'true'
 spec:
  forProvider:
-    region: eu-west-3
-    availabilityZone: eu-west-3a ## zone ?
+    region: eu-west-2
+    availabilityZone: eu-west-2a ## zone ?
     vpcIdRef:
       name: crossplane-vpc
     cidrBlock: 10.0.5.0/24 # CIDR ?
