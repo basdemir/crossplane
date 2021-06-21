@@ -1,0 +1,11 @@
+apiVersion: aws.platformref.wescale.fr/v1alpha1
+kind: Network
+metadata:
+  name: demo-aws-network
+spec:
+  id: demo-aws-network
+  # Support for a compositionSelector is automatically injected into the schema
+  # of all published infrastructure claim resources. 
+  # compositionSelector:
+  #   matchLabels:
+  #     provider: aws
