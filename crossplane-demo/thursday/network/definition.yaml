@@ -1,14 +1,14 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-  name: compositenetworks.aws.platformref.wescale.fr
+  name: compositenetworks.aws.platformref.ecospend.com
 spec:
   # Comment claimNames to enforce static provisioning.
-  # Only creation of cluster scope resource "CompositeNetwork.aws.platformref.wescale.fr/v1alpha1" is possible
+  # Only creation of cluster scope resource "CompositeNetwork.aws.platformref.ecospend.com/v1alpha1" is possible
   claimNames:
     kind: Network
     plural: networks
-  group: aws.platformref.wescale.fr
+  group: aws.platformref.ecospend.com
   names:
     kind: CompositeNetwork
     plural: compositenetworks

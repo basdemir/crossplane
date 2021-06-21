@@ -1,11 +1,11 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-  name: eks.aws.platformref.wescale.fr
+  name: eks.aws.platformref.ecospend.com
 spec:
   connectionSecretKeys:
   - kubeconfig
-  group: aws.platformref.wescale.fr
+  group: aws.platformref.ecospend.com
   names:
     kind: EKS
     plural: eks

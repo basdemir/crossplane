@@ -19,7 +19,7 @@ kubectl apply -f examples/ -n default
 kubectl get network,cluster -n default
 # Get the managed resources
 kubectl get crossplane -l crossplane.io/claim-name=demo-aws-network
-//kubectl get crossplane -l networks.aws.platformref.wescale.fr/network-id=demo-aws-network
+//kubectl get crossplane -l networks.aws.platformref.ecospend.com/network-id=demo-aws-network
 ```
 
 Get the connection credentials.
@@ -55,7 +55,7 @@ Create a Claim referencing the XR with a `resourceRef`:
 
 ```yaml
 resourceRef:
-  apiVersion: aws.platformref.wescale.fr/v1alpha1
+  apiVersion: aws.platformref.ecospend.com/v1alpha1
   kind: CompositeNetwork
   name: demo-static-aws-network
 ```

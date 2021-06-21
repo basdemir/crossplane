@@ -1,4 +1,4 @@
-apiVersion: aws.platformref.wescale.fr/v1alpha1
+apiVersion: aws.platformref.ecospend.com/v1alpha1
 kind: Network
 metadata:
   name: demo-aws-network

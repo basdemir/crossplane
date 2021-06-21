@@ -1,9 +1,9 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-  name: services.aws.platformref.wescale.fr
+  name: services.aws.platformref.ecospend.com
 spec:
-  group: aws.platformref.wescale.fr
+  group: aws.platformref.ecospend.com
   names:
     kind: Services
     plural: services
