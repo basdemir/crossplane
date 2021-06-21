@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 providerConfigName: "default"
-region: eu-west-3
+region: eu-west-2
 cidrBlock:
   vpc: "10.0.0.0/16"
   privateSubnet1: "10.0.0.0/24"

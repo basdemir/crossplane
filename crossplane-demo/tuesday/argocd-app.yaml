@@ -6,12 +6,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/yesteph/crossplane-demo.git
-    targetRevision: HEAD
-    path: tuesday/vpc
+    repoURL: https://github.com/basdemir/crossplane.git
+    targetRevision: demo1
+    path: crossplane-demo/tuesday/vpc
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true
   destination:
     server: https://kubernetes.default.svc
     namespace: crossplane-system
