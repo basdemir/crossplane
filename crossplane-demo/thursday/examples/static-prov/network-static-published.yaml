@@ -1,9 +1,9 @@
 apiVersion: aws.platformref.ecospend.com/v1alpha1
 kind: CompositeNetwork
 metadata:
-  name: demo-static-aws-network
+  name: demo-static-published-aws-network
 spec:
-  id: demo-static-aws-network 
+  id: demo-static-published-aws-network 
   writeConnectionSecretToRef:
     namespace: default
-    name: demo-static-aws-network
+    name: demo-static-published-aws-network

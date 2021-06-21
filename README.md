@@ -121,10 +121,18 @@ echo "Argo CD login/passwd: admin / ${password}"
 
 ### A tool for exploring a docker image, layer contents, and discovering ways to shrink the size of your Docker/OCI image.
 
-https://github.com/wagoodman/dive
+[dive for oci images](https://github.com/wagoodman/dive)
 
 ### find and replace eu-west-2
 
 ```
 find . -type f | xargs grep -l eu-west-2 | xargs sed -i "s/eu-west-2/eu-west-2/g"
+```
+[increase logging verbosity](https://crossplane.io/docs/v1.2/reference/troubleshoot.html#provider-logs)
+
+```
+ka controllerConfig.yaml
+k edit providers.pkg.crossplane.io provider-aws
+controllerConfigRef:
+  name: debug-config
 ```
